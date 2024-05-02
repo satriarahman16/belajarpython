@@ -1,0 +1,19 @@
+class Bank():
+
+  def __init__(self, pemilik, saldo):
+    self.pemilik = pemilik
+    self.saldo = saldo
+
+  def deposit(self, jml_setor):
+    self.saldo = self.saldo + jml_setor
+    print(f"Menambah sejumlah {jml_setor} ke dalam saldo")
+
+  def penarikan(self,jml_penarikan):
+    if self.saldo >= jml_penarikan:
+      self.saldo = self.saldo - jml_penarikan
+      print("Penarikan Uang diterima")
+    else:
+      print("saldo anda tidak cukup")
+
+  def __str__(self):
+    return f"Pemilik: {self.pemilik} \nSaldo: {self.saldo}"
